@@ -1,0 +1,28 @@
+{
+  "name": "tp",
+  "version": "1.0.0",
+  "description": "## Postgres",
+  "main": "index.js",
+  "module": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "http": "^0.0.1-security",
+    "knex": "^2.5.1",
+    "nodemon": "^3.0.1",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
