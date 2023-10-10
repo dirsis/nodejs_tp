@@ -4,7 +4,7 @@ const hola = (req, res) => {
 };
 
 //DIA 2 - Crear una ruta que retorne una lista de tareas (adjunto)
-let task= require("./task");
+let task= require("../db/task");
 const tareas = (req, res) => {
   res.status(200).json({estado: "OK", result: task});
 };
@@ -33,8 +33,13 @@ const edit =  (req, res) => {
 //module.exports = { hola, tareas, add, edit };
 
 
+
+
+
+
+
 //DIA 5 - Crear una ruta que obtenga todas las tareas según el id del usuario
-const knex = require("./knex");
+const knex = require("../knex/knex");
 const dbtask =  async (req, res) => {
     const task = await knex
     .select("*")

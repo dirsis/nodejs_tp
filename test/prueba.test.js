@@ -1,4 +1,4 @@
-const prueba = require('../prueba');
+const prueba = require('../pruebas/prueba');
 
 describe("Prueba de TOBE",() => {
   test('sumar 1 + 2 es igual a 3', () => {

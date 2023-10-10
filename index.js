@@ -1,19 +1,22 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const task = require("./task.js");
-const router = require("./router");
+const task = require("./db/task");
+const router = require("./routers/router");
 app.use(express.json());
 
 app.use("/api/", router);
-
+//DIA2 -  Crear una ruta que retorne un “Hola mundo” 
 app.use("/hola/", (req, res) => {
     res.send("Hola Mundo");
     //res.status(200).json({estado: "OK"});
 });
+//DIA2 - Crear una ruta que retorne una lista de tareas (adjunto)
 app.use("/tareas/", (req, res) => {
     res.status(200).json({estado: "OK", result: task});
 });
+
+//DIA3 - Crear una ruta que agregue una tarea.
 app.use("/add/", (req, res) => {
     const taskadd = {
         titulo: req.body.titulo,
@@ -27,6 +30,7 @@ app.use("/add/", (req, res) => {
     task.push(taskadd);
     res.status(200).json({estado: "OK", result: task});
 });
+//DIA3 - Actualizar una tarea por id. 
 
 app.use("/edit/:id", (req, res) => {
     const id = req.params.id;

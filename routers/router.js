@@ -2,7 +2,7 @@ const express = require("express");
 
 //DIA 4 - Reestructurar el proyecto usando routes 
 const router = express.Router();
-const controller = require("./controller");
+const controller = require("../controllers/controller");
 router.put("/task/:id", controller.edit);
 router.get("/task", controller.tareas);
 router.post("/task", controller.add);
