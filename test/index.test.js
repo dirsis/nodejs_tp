@@ -6,15 +6,30 @@ const mocks = require("./mocks/task.mock");
 describe("Prueba de Hola", () => {
   test('Espera recibir Hola mundo', async () => {
     const response = await request(app).get("/hola");
-    //console.log(response);
+    //PASSED
     expect(response.text).toBe("Hola Mundo");
+  });
+});
+
+describe("Prueba de Hola", () => {
+  test('Espera recibir Hola mundo', async () => {
+    const response = await request(app).get("/hola");
+    //FALLED
+    expect(response.text).toBeFalsy();
+  });
+});
+
+describe("Prueba de Hola", () => {
+  test('Espera recibir Hola mundo', async () => {
+    const response = await request(app).get("/hola");
+    //FALLED
+    expect(response.text).toBeTruthy();
   });
 });
 
 describe("Prueba de Mocks", () => {
   test('Se Espera crear un Tarea con Exito', async () => {
     const body = mocks.taskadd
-    console.log(body);
     const response = await request(app)
     .post("/api/dbtask/")
     .send(body);
@@ -24,4 +39,36 @@ describe("Prueba de Mocks", () => {
     });
   });
 });
+describe("Prueba de Mocks", () => {
+  test('Revisa Dato en Titulo si es Nulo', async () => {
+    const body = mocks.taskadd
+    //FALLED
+    expect(body["titulo"]).toBeNull();
+  });
+});
+describe("Prueba de Mocks", () => {
+  test('Revisa Dato en Titulo si no esta definida', async () => {
+    const body = mocks.taskadd
+    //FALLED
+    expect(body["titulo"]).toBeUndefined();
+  });
+});
+/*
+describe("Prueba de Mocks", () => {
+  test('Revisa si la matriz trae 4 elementos', async () => {
+    const body = mocks.taskadd;
+    //PASSED
+    expect(body).toHaveLength(4)
+  });
+});
+*/
+describe("Prueba de Mocks", () => {
+  test('Revisa si la matriz trae 4 elementos', async () => {
+    const body = mocks.taskadd
+    //PASSED
+    expect(body["titulo"]).toContain('TP')
+  });
+});
+
+
 

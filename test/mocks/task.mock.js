@@ -1,5 +1,5 @@
 const taskadd = {
-    "titulo": "hola",
+    "titulo": "TP",
     "prioridad_id": "1",
     "usuario_id":"1",
     "completado":"1"
