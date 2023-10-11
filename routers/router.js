@@ -11,8 +11,12 @@ router.post("/task", controller.add);
 router.get("/dbtask", controller.dbtask);
 
 //Día 6 - Las rutas post y put deben estar conectados a la base de datos 
-router.post("/dbtask", controller.dbaddtask);
+//ADD
+const mdlw = require("../middlewares/validarTask");
+router.post("/dbtask", mdlw.validateAddTask , controller.dbaddtask);
+//UPDATE
 router.put("/dbtask/:id", controller.dbupttask);
-router.delete("/dbtask/:id", controller.dbdeltask);
+//DELETE
+router.put("/dbtask/:id", controller.dbdeltask);
 
 module.exports = router;

@@ -7,6 +7,20 @@ npm i nodemon
 package.json->script
 "start": "nodemon index.js",
 ---------------------
+--GIT
+-----PRIMERA VEZ
+git init
+git branch -M main
+git remote add origin https://github.com/dirsis/nodejs_tp.git
+git add *
+git commit -m "first commit"
+git push -u origin main
+----VERSION X
+git add *
+git commit -m "Version 2"
+git push 
+
+
 --PGADMIN
 CREATE DATABASE "2023TP"  
 WITH OWNER = postgres       
@@ -28,3 +42,7 @@ CREATE TABLE public.task (
 --DIA 5
 npm i knox
 npm i pg
+
+--DIA 6
+npm i joi
+npm install jest --save-dev

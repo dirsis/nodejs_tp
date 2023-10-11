@@ -39,9 +39,12 @@ app.use("/edit/:id", (req, res) => {
     res.status(200).json({estado: "OK", result: task2});
 });
 
-module.exports = app;
-/*
+
+
 app.listen(port, () => {
-    console.log("la aplicacion es corriendo ");
+    console.log('la aplicacion es corriendo en puerto '+port);
 });
-*/
+
+
+//USADO PARA HACER TEST
+module.exports = app;

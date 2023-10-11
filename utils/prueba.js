@@ -1,8 +1,12 @@
-
-
-function suma(a, b) {
-    return a + b;
+const suma = (lista) => {
+    const total = lista.reduce( function (acumulador, elemento) {
+        return acumulador + elemento;
+    },0)
+    return total;
 }
+
+
+
 function compara(a, b) {
     if (a==b){
         return true

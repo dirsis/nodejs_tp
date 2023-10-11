@@ -32,12 +32,6 @@ const edit =  (req, res) => {
 };
 //module.exports = { hola, tareas, add, edit };
 
-
-
-
-
-
-
 //DIA 5 - Crear una ruta que obtenga todas las tareas según el id del usuario
 const knex = require("../knex/knex");
 const dbtask =  async (req, res) => {
@@ -55,7 +49,7 @@ const dbtask =  async (req, res) => {
 }
 //DIA6 - Las rutas post y put deben estar conectados a la base de datos 
 const dbaddtask = async (req, res) => {
-  const {titulo,prioridad_id,usuario_id,completado,} = req.body;
+  const {titulo,prioridad_id,usuario_id,completado} = req.body;
   const newtask = { 
       titulo:titulo,
       prioridad_id: prioridad_id,
@@ -67,7 +61,7 @@ const dbaddtask = async (req, res) => {
       .returning(["titulo","prioridad_id","usuario_id","completado","fecha_alta"])
       .insert(newtask)
       .then(() => {
-          res.status(200).send("Tarea Registrada");
+          res.status(200).json({result: "OK"});
       })
       .catch((e) => res.status(400).send(e));
 };
@@ -92,12 +86,16 @@ const dbupttask = async (req, res) => {
 };
 
 const dbdeltask = async (req, res) => {
-   const id = req.params['id'];
+  const id = req.params['id'];
+  const upttask = { 
+      fecha_baja: new Date()
+  };
       await knex("task")
-      .delete()
+      .returning(["fecha_baja"])
+      .update(upttask)
       .where("task_id",id)
       .then(() => {
-          res.status(200).send("Tarea Eliminada");
+          res.status(200).send("Tarea Bajada");
       })
       .catch((e) => res.status(400).send(e));
 };

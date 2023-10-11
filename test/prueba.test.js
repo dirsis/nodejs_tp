@@ -1,10 +1,15 @@
-const prueba = require('../pruebas/prueba');
+const { describe, test, expect } = require("@jest/globals");
+const prueba = require('../utils/prueba');
+//PRUEBA 
+describe("Suma Variables",() =>{
+  test("Deberia obtener la suma de las variables", () => {
+    const lista = [2,6];
+    const resultado = prueba.suma(lista);
+    expect(resultado).toBe(8);
+  })
+})
 
-describe("Prueba de TOBE",() => {
-  test('sumar 1 + 2 es igual a 3', () => {
-    expect(prueba.suma(1, 2)).toBe(3);
-  });
-});
+/*
 describe("Prueba de .toEqual",() => {
   test('sumar 1 + 3 es igual a 4', () => {
     expect(prueba.suma(1, 3)).toEqual(4)
@@ -67,4 +72,4 @@ describe("Prueba de .toHaveLength",() => {
     expect(prueba.dato(["Manzana", "Banana"])).toHaveLength(2)
   });
 });
-
+*/
