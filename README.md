@@ -1,11 +1,13 @@
---DIA 1
+--DIA 1 -- iniciar proyecto node
 npm init -y
 npm i http
 npm i express
 npm i nodemon
 ---------------------
+--EDICION PACKAGE,JSON
 package.json->script
 "start": "nodemon index.js",
+"test": "jest",
 ---------------------
 --GIT
 -----PRIMERA VEZ
@@ -46,3 +48,7 @@ npm i pg
 --DIA 6
 npm i joi
 npm install jest --save-dev
+--EDICION PACKAGE,JSON
+package.json->script
+"test": "jest",
+
