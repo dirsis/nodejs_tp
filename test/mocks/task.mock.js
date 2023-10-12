@@ -4,4 +4,5 @@ const taskadd = {
     "usuario_id":"1",
     "completado":"1"
 };
-module.exports={ taskadd };
+const taskitem = ["titulo","prioridad_id","usuario_id","completado"];
+module.exports={ taskadd,taskitem };
