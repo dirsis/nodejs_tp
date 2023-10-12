@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 3001;
 const task = require("./db/task");
 const router = require("./routers/router");
 app.use(express.json());
